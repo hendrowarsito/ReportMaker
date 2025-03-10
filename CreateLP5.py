@@ -6,6 +6,15 @@ import zipfile
 import locale
 import os
 
+import subprocess
+import streamlit as st
+
+def check_installed_packages():
+    result = subprocess.run(["pip", "list"], capture_output=True, text=True)
+    return result.stdout
+
+st.text(check_installed_packages())
+
 def format_number_indonesia(value):
     """Format number to Indonesian format (e.g., 12.000,00)."""
     try:
