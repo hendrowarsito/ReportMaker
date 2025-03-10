@@ -6,8 +6,9 @@ import zipfile
 import locale
 import os
 
+os.system("pip install python-docx")
+
 import subprocess
-import streamlit as st
 
 def check_installed_packages():
     result = subprocess.run(["pip", "list"], capture_output=True, text=True)
